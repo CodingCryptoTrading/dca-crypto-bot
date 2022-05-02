@@ -75,7 +75,7 @@ class Dca(object):
         # define path for order_book (next_purchases)
         self.order_book_path = Path('trades/next_purchases.csv')
 
-        # Get the 'SCHEDULE' time for each coin
+        # Get the 'SCHEDULE' time for each coin and initialize order_book
         self.initialize_order_book()
 
         # get retry times for errors
@@ -244,7 +244,6 @@ class Dca(object):
     def get_retry_time(self, coin, error):
         """
         For a given error get the appropriate retry time for the next buy attempt.
-        It also sets STATUS variable
         Args:
             coin: coin to update (str)
             error: error returned during buy time
@@ -295,9 +294,8 @@ class Dca(object):
 
     def initialize_order_book(self):
         """
-        Initialize the schedule time for each coin depending on current time and config settings. Also, initialize the order_book
-            coin: coin to update (str)
-            retry_after: time in seconds to wait for the next buy attempt (in case previous failed)
+        Initialize the schedule time for each coin depending on current time and config settings.
+        Also, initialize the order_book
         """
         for coin in self.coin:
             if self.coin[coin]['CYCLE'].lower() == 'minutely':
