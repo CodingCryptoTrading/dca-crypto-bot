@@ -379,29 +379,6 @@ class Dca(object):
 
 if __name__ == "__main__":
 
-
-    #
-    # api_test_selector = 'TEST' if cfg['TEST'] else 'REAL'
-    #
-    # exchange_id = cfg['EXCHANGE']
-    # exchange_class = getattr(ccxt, exchange_id)
-    # exchange = exchange_class({
-    #     'apiKey': api[exchange_id.upper()][api_test_selector]['APIKEY'],
-    #     'secret': api[exchange_id.upper()][api_test_selector]['SECRET'],
-    #     'enableRateLimit': True,
-    #     'options': {'adjustForTimeDifference': True}
-    # })
-    # if 'TEST' in api_test_selector:
-    #     print(f"Connected to {exchange_id} in TEST mode!")
-    #     exchange.set_sandbox_mode(True)
-    # else:
-    #     print(f"Connected to {exchange_id}!")
-    #     #are_you_sure_to_continue()
-    #
-    # # Show balance
-    # print("Getting your balance from the exchange:")
-    # print(get_non_zero_balance(exchange, sort_by='total'))
-
     cfg_path = 'config/config_example.yml'
     api_path = 'auth/API_keys_example.yml'
 
