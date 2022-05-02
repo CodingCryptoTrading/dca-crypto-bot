@@ -32,7 +32,7 @@ If you opted for a Raspberry Pi, you might find useful to follow this [installat
 ### Set the API key
 After choosing one of the [ccxt](https://github.com/ccxt/ccxt) supported exchanges, you will have to generate an API key with "reading" and "trading" permissions. For instance, the binance procedure is described [here](https://www.binance.com/en/support/faq/360002502072).
 
-Then, input the generated key and secret in [auth/API_keys_example.yml](auth/API_keys_example.yml) and save it as `auth.yml`. Maintain the syntax as in the example file. In particular, after the name of the exchange be sure to specify if it is a *REAL* or *TEST* account (more on test accounts [here](##-running-the-bot-in-test-mode)) 
+Then, input the generated key and secret in [auth/API_keys_example.yml](auth/API_keys_example.yml) and save it as `auth.yml`. Maintain the syntax as in the example file. In particular, after the name of the exchange be sure to specify if it is a *REAL* or *TEST* account (more on test accounts [here](#running-the-bot-in-test-mode)) 
 
 ### Configure the bot
 The bot settings are stored in [config/config_example.yml](config/config_example.yml). Make a copy of the file and rename it as  `config.yml`. Fill the file with your own settings.
@@ -48,7 +48,7 @@ COINS:     # Choose the coins to buy:
         ON_DAY: 1             # [only for monthly]. Date of the month [1-28]
         AT_TIME: '19:30'      # Format: 0 <= hour <= 23, 0 <= minute <= 59
 ```
-Note that `ON_WEEKDAY` and `ON_DAY` are not considered in a daily `cycle`. There is also a "minutely" cycle (buy every minute) but is disabled with real accounts, it is only available in test mode for debugging purposes (see [Running the bot in test mode](##-running-the-bot-in-test-mode)). 
+Note that `ON_WEEKDAY` and `ON_DAY` are not considered in a daily `cycle`. There is also a "minutely" cycle (buy every minute) but is disabled with real accounts, it is only available in test mode for debugging purposes (see [Running the bot in test mode](#running-the-bot-in-test-mode)). 
 
 Next, you have to specify what exchange to use, and whether it is a test account (`TEST: True`) or a real account (`TEST: False`):
 
