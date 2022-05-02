@@ -1,0 +1,1845 @@
+[
+    {
+        "info": {
+            "symbol": "BTCUSDT",
+            "orderId": "11407420",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S823416419e79ab20214824f1",
+            "transactTime": "1651429214545",
+            "price": "0.00000000",
+            "origQty": "0.00065200",
+            "executedQty": "0.00065200",
+            "cummulativeQuoteQty": "24.98880628",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "38326.39000000",
+                    "qty": "0.00065200",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3289726"
+                }
+            ]
+        },
+        "id": "11407420",
+        "clientOrderId": "x-R4BD3S823416419e79ab20214824f1",
+        "timestamp": 1651429214545,
+        "datetime": "2022-05-01T18:20:14.545Z",
+        "lastTradeTimestamp": null,
+        "symbol": "BTC/USDT",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 38326.39,
+        "stopPrice": null,
+        "amount": 0.000652,
+        "cost": 24.98880628,
+        "average": 38326.39,
+        "filled": 0.000652,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "BTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "38326.39000000",
+                    "qty": "0.00065200",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3289726"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3289726",
+                "order": "11407420",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38326.39,
+                "amount": 0.000652,
+                "cost": 24.98880628,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "BTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "XRPBUSD",
+            "orderId": "484596",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82c3fe3d583119cc3bb3fa85",
+            "transactTime": "1651429217912",
+            "price": "0.00000000",
+            "origQty": "19.60000000",
+            "executedQty": "19.60000000",
+            "cummulativeQuoteQty": "14.96264000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68426"
+                }
+            ]
+        },
+        "id": "484596",
+        "clientOrderId": "x-R4BD3S82c3fe3d583119cc3bb3fa85",
+        "timestamp": 1651429217912,
+        "datetime": "2022-05-01T18:20:17.912Z",
+        "lastTradeTimestamp": null,
+        "symbol": "XRP/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 0.7634,
+        "stopPrice": null,
+        "amount": 19.6,
+        "cost": 14.96264,
+        "average": 0.7634,
+        "filled": 19.6,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "XRP",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68426"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "XRP/BUSD",
+                "id": "68426",
+                "order": "484596",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 0.7634,
+                "amount": 19.6,
+                "cost": 14.96264,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "XRP"
+                },
+                "fees": [
+                    {
+                        "currency": "XRP",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "XRP",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "LTCBUSD",
+            "orderId": "61033",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82ae98cea1545e0985692a87",
+            "transactTime": "1651429221804",
+            "price": "0.00000000",
+            "origQty": "0.24850000",
+            "executedQty": "0.24850000",
+            "cummulativeQuoteQty": "24.99910000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10655"
+                }
+            ]
+        },
+        "id": "61033",
+        "clientOrderId": "x-R4BD3S82ae98cea1545e0985692a87",
+        "timestamp": 1651429221804,
+        "datetime": "2022-05-01T18:20:21.804Z",
+        "lastTradeTimestamp": null,
+        "symbol": "LTC/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 100.6,
+        "stopPrice": null,
+        "amount": 0.2485,
+        "cost": 24.9991,
+        "average": 100.6,
+        "filled": 0.2485,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "LTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10655"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "LTC/BUSD",
+                "id": "10655",
+                "order": "61033",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 100.6,
+                "amount": 0.2485,
+                "cost": 24.9991,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "LTC"
+                },
+                "fees": [
+                    {
+                        "currency": "LTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "LTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "BTCUSDT",
+            "orderId": "11407686",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S829ece2292e67b8584406731",
+            "transactTime": "1651429271674",
+            "price": "0.00000000",
+            "origQty": "0.00065300",
+            "executedQty": "0.00065300",
+            "cummulativeQuoteQty": "24.97899351",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "38252.67000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3289833"
+                }
+            ]
+        },
+        "id": "11407686",
+        "clientOrderId": "x-R4BD3S829ece2292e67b8584406731",
+        "timestamp": 1651429271674,
+        "datetime": "2022-05-01T18:21:11.674Z",
+        "lastTradeTimestamp": null,
+        "symbol": "BTC/USDT",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 38252.67,
+        "stopPrice": null,
+        "amount": 0.000653,
+        "cost": 24.97899351,
+        "average": 38252.67,
+        "filled": 0.000653,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "BTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "38252.67000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3289833"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3289833",
+                "order": "11407686",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38252.67,
+                "amount": 0.000653,
+                "cost": 24.97899351,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "BTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "XRPBUSD",
+            "orderId": "484597",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82d5ac0be80ac96e5fff797d",
+            "transactTime": "1651429275046",
+            "price": "0.00000000",
+            "origQty": "19.60000000",
+            "executedQty": "19.60000000",
+            "cummulativeQuoteQty": "14.96264000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68427"
+                }
+            ]
+        },
+        "id": "484597",
+        "clientOrderId": "x-R4BD3S82d5ac0be80ac96e5fff797d",
+        "timestamp": 1651429275046,
+        "datetime": "2022-05-01T18:21:15.046Z",
+        "lastTradeTimestamp": null,
+        "symbol": "XRP/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 0.7634,
+        "stopPrice": null,
+        "amount": 19.6,
+        "cost": 14.96264,
+        "average": 0.7634,
+        "filled": 19.6,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "XRP",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68427"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "XRP/BUSD",
+                "id": "68427",
+                "order": "484597",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 0.7634,
+                "amount": 19.6,
+                "cost": 14.96264,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "XRP"
+                },
+                "fees": [
+                    {
+                        "currency": "XRP",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "XRP",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "LTCBUSD",
+            "orderId": "61034",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S821bfd18548a8610ae8d8ec7",
+            "transactTime": "1651429278792",
+            "price": "0.00000000",
+            "origQty": "0.24850000",
+            "executedQty": "0.24850000",
+            "cummulativeQuoteQty": "24.99910000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10656"
+                }
+            ]
+        },
+        "id": "61034",
+        "clientOrderId": "x-R4BD3S821bfd18548a8610ae8d8ec7",
+        "timestamp": 1651429278792,
+        "datetime": "2022-05-01T18:21:18.792Z",
+        "lastTradeTimestamp": null,
+        "symbol": "LTC/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 100.6,
+        "stopPrice": null,
+        "amount": 0.2485,
+        "cost": 24.9991,
+        "average": 100.6,
+        "filled": 0.2485,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "LTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10656"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "LTC/BUSD",
+                "id": "10656",
+                "order": "61034",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 100.6,
+                "amount": 0.2485,
+                "cost": 24.9991,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "LTC"
+                },
+                "fees": [
+                    {
+                        "currency": "LTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "LTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "BTCUSDT",
+            "orderId": "11407951",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82d5bbe48dcee30f865f5bfe",
+            "transactTime": "1651429331654",
+            "price": "0.00000000",
+            "origQty": "0.00065300",
+            "executedQty": "0.00065300",
+            "cummulativeQuoteQty": "24.98059336",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "38255.12000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3289980"
+                }
+            ]
+        },
+        "id": "11407951",
+        "clientOrderId": "x-R4BD3S82d5bbe48dcee30f865f5bfe",
+        "timestamp": 1651429331654,
+        "datetime": "2022-05-01T18:22:11.654Z",
+        "lastTradeTimestamp": null,
+        "symbol": "BTC/USDT",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 38255.12,
+        "stopPrice": null,
+        "amount": 0.000653,
+        "cost": 24.98059336,
+        "average": 38255.12,
+        "filled": 0.000653,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "BTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "38255.12000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3289980"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3289980",
+                "order": "11407951",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38255.12,
+                "amount": 0.000653,
+                "cost": 24.98059336,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "BTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "XRPBUSD",
+            "orderId": "484598",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82663cd562b0e386f2dd3f78",
+            "transactTime": "1651429335023",
+            "price": "0.00000000",
+            "origQty": "19.60000000",
+            "executedQty": "19.60000000",
+            "cummulativeQuoteQty": "14.96264000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68428"
+                }
+            ]
+        },
+        "id": "484598",
+        "clientOrderId": "x-R4BD3S82663cd562b0e386f2dd3f78",
+        "timestamp": 1651429335023,
+        "datetime": "2022-05-01T18:22:15.023Z",
+        "lastTradeTimestamp": null,
+        "symbol": "XRP/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 0.7634,
+        "stopPrice": null,
+        "amount": 19.6,
+        "cost": 14.96264,
+        "average": 0.7634,
+        "filled": 19.6,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "XRP",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68428"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "XRP/BUSD",
+                "id": "68428",
+                "order": "484598",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 0.7634,
+                "amount": 19.6,
+                "cost": 14.96264,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "XRP"
+                },
+                "fees": [
+                    {
+                        "currency": "XRP",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "XRP",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "LTCBUSD",
+            "orderId": "61035",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S828c7ed8680ec1f3aa83a38a",
+            "transactTime": "1651429338681",
+            "price": "0.00000000",
+            "origQty": "0.24850000",
+            "executedQty": "0.24850000",
+            "cummulativeQuoteQty": "24.99910000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10657"
+                }
+            ]
+        },
+        "id": "61035",
+        "clientOrderId": "x-R4BD3S828c7ed8680ec1f3aa83a38a",
+        "timestamp": 1651429338681,
+        "datetime": "2022-05-01T18:22:18.681Z",
+        "lastTradeTimestamp": null,
+        "symbol": "LTC/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 100.6,
+        "stopPrice": null,
+        "amount": 0.2485,
+        "cost": 24.9991,
+        "average": 100.6,
+        "filled": 0.2485,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "LTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10657"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "LTC/BUSD",
+                "id": "10657",
+                "order": "61035",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 100.6,
+                "amount": 0.2485,
+                "cost": 24.9991,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "LTC"
+                },
+                "fees": [
+                    {
+                        "currency": "LTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "LTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "BTCUSDT",
+            "orderId": "11408221",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82f73d2401363d85c403bd46",
+            "transactTime": "1651429391674",
+            "price": "0.00000000",
+            "origQty": "0.00065300",
+            "executedQty": "0.00065300",
+            "cummulativeQuoteQty": "24.97111833",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "38240.61000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290094"
+                }
+            ]
+        },
+        "id": "11408221",
+        "clientOrderId": "x-R4BD3S82f73d2401363d85c403bd46",
+        "timestamp": 1651429391674,
+        "datetime": "2022-05-01T18:23:11.674Z",
+        "lastTradeTimestamp": null,
+        "symbol": "BTC/USDT",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 38240.61,
+        "stopPrice": null,
+        "amount": 0.000653,
+        "cost": 24.97111833,
+        "average": 38240.61,
+        "filled": 0.000653,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "BTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "38240.61000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290094"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3290094",
+                "order": "11408221",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38240.61,
+                "amount": 0.000653,
+                "cost": 24.97111833,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "BTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "XRPBUSD",
+            "orderId": "484599",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82438999a157d193b97de876",
+            "transactTime": "1651429395490",
+            "price": "0.00000000",
+            "origQty": "19.60000000",
+            "executedQty": "19.60000000",
+            "cummulativeQuoteQty": "14.96264000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68429"
+                }
+            ]
+        },
+        "id": "484599",
+        "clientOrderId": "x-R4BD3S82438999a157d193b97de876",
+        "timestamp": 1651429395490,
+        "datetime": "2022-05-01T18:23:15.490Z",
+        "lastTradeTimestamp": null,
+        "symbol": "XRP/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 0.7634,
+        "stopPrice": null,
+        "amount": 19.6,
+        "cost": 14.96264,
+        "average": 0.7634,
+        "filled": 19.6,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "XRP",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68429"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "XRP/BUSD",
+                "id": "68429",
+                "order": "484599",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 0.7634,
+                "amount": 19.6,
+                "cost": 14.96264,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "XRP"
+                },
+                "fees": [
+                    {
+                        "currency": "XRP",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "XRP",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "LTCBUSD",
+            "orderId": "61036",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82aa45c905369f66d0d2a36f",
+            "transactTime": "1651429399317",
+            "price": "0.00000000",
+            "origQty": "0.24850000",
+            "executedQty": "0.24850000",
+            "cummulativeQuoteQty": "24.99910000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10658"
+                }
+            ]
+        },
+        "id": "61036",
+        "clientOrderId": "x-R4BD3S82aa45c905369f66d0d2a36f",
+        "timestamp": 1651429399317,
+        "datetime": "2022-05-01T18:23:19.317Z",
+        "lastTradeTimestamp": null,
+        "symbol": "LTC/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 100.6,
+        "stopPrice": null,
+        "amount": 0.2485,
+        "cost": 24.9991,
+        "average": 100.6,
+        "filled": 0.2485,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "LTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10658"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "LTC/BUSD",
+                "id": "10658",
+                "order": "61036",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 100.6,
+                "amount": 0.2485,
+                "cost": 24.9991,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "LTC"
+                },
+                "fees": [
+                    {
+                        "currency": "LTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "LTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "BTCUSDT",
+            "orderId": "11408483",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S8245fa7cb80d84672cdab3f8",
+            "transactTime": "1651429451656",
+            "price": "0.00000000",
+            "origQty": "0.00065300",
+            "executedQty": "0.00065300",
+            "cummulativeQuoteQty": "24.98061295",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "38255.15000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290152"
+                }
+            ]
+        },
+        "id": "11408483",
+        "clientOrderId": "x-R4BD3S8245fa7cb80d84672cdab3f8",
+        "timestamp": 1651429451656,
+        "datetime": "2022-05-01T18:24:11.656Z",
+        "lastTradeTimestamp": null,
+        "symbol": "BTC/USDT",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 38255.15,
+        "stopPrice": null,
+        "amount": 0.000653,
+        "cost": 24.98061295,
+        "average": 38255.15,
+        "filled": 0.000653,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "BTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "38255.15000000",
+                    "qty": "0.00065300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290152"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3290152",
+                "order": "11408483",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38255.15,
+                "amount": 0.000653,
+                "cost": 24.98061295,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "BTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "XRPBUSD",
+            "orderId": "484600",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82ab5a3898147087df422499",
+            "transactTime": "1651429454828",
+            "price": "0.00000000",
+            "origQty": "19.60000000",
+            "executedQty": "19.60000000",
+            "cummulativeQuoteQty": "14.96264000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68430"
+                }
+            ]
+        },
+        "id": "484600",
+        "clientOrderId": "x-R4BD3S82ab5a3898147087df422499",
+        "timestamp": 1651429454828,
+        "datetime": "2022-05-01T18:24:14.828Z",
+        "lastTradeTimestamp": null,
+        "symbol": "XRP/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 0.7634,
+        "stopPrice": null,
+        "amount": 19.6,
+        "cost": 14.96264,
+        "average": 0.7634,
+        "filled": 19.6,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "XRP",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68430"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "XRP/BUSD",
+                "id": "68430",
+                "order": "484600",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 0.7634,
+                "amount": 19.6,
+                "cost": 14.96264,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "XRP"
+                },
+                "fees": [
+                    {
+                        "currency": "XRP",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "XRP",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "LTCBUSD",
+            "orderId": "61037",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82881dc5ce1571b8a68648b",
+            "transactTime": "1651429458087",
+            "price": "0.00000000",
+            "origQty": "0.24850000",
+            "executedQty": "0.24850000",
+            "cummulativeQuoteQty": "24.99910000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10659"
+                }
+            ]
+        },
+        "id": "61037",
+        "clientOrderId": "x-R4BD3S82881dc5ce1571b8a68648b",
+        "timestamp": 1651429458087,
+        "datetime": "2022-05-01T18:24:18.087Z",
+        "lastTradeTimestamp": null,
+        "symbol": "LTC/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 100.6,
+        "stopPrice": null,
+        "amount": 0.2485,
+        "cost": 24.9991,
+        "average": 100.6,
+        "filled": 0.2485,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "LTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10659"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "LTC/BUSD",
+                "id": "10659",
+                "order": "61037",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 100.6,
+                "amount": 0.2485,
+                "cost": 24.9991,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "LTC"
+                },
+                "fees": [
+                    {
+                        "currency": "LTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "LTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "BTCUSDT",
+            "orderId": "11408746",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82d7de31d60e19fa3ba3cd32",
+            "transactTime": "1651429511659",
+            "price": "0.00000000",
+            "origQty": "0.00065300",
+            "executedQty": "0.00065300",
+            "cummulativeQuoteQty": "24.96505849",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "38231.33000000",
+                    "qty": "0.00037000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290256"
+                },
+                {
+                    "price": "38231.33000000",
+                    "qty": "0.00028300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290257"
+                }
+            ]
+        },
+        "id": "11408746",
+        "clientOrderId": "x-R4BD3S82d7de31d60e19fa3ba3cd32",
+        "timestamp": 1651429511659,
+        "datetime": "2022-05-01T18:25:11.659Z",
+        "lastTradeTimestamp": null,
+        "symbol": "BTC/USDT",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 38231.33,
+        "stopPrice": null,
+        "amount": 0.000653,
+        "cost": 24.96505849,
+        "average": 38231.33,
+        "filled": 0.000653,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "BTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "38231.33000000",
+                    "qty": "0.00037000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290256"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3290256",
+                "order": "11408746",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38231.33,
+                "amount": 0.00037,
+                "cost": 14.1455921,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            },
+            {
+                "info": {
+                    "price": "38231.33000000",
+                    "qty": "0.00028300",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290257"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3290257",
+                "order": "11408746",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38231.33,
+                "amount": 0.000283,
+                "cost": 10.81946639,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "BTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "XRPBUSD",
+            "orderId": "484601",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82ba7727041043eb93815ce7",
+            "transactTime": "1651429514919",
+            "price": "0.00000000",
+            "origQty": "19.60000000",
+            "executedQty": "19.60000000",
+            "cummulativeQuoteQty": "14.96264000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68431"
+                }
+            ]
+        },
+        "id": "484601",
+        "clientOrderId": "x-R4BD3S82ba7727041043eb93815ce7",
+        "timestamp": 1651429514919,
+        "datetime": "2022-05-01T18:25:14.919Z",
+        "lastTradeTimestamp": null,
+        "symbol": "XRP/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 0.7634,
+        "stopPrice": null,
+        "amount": 19.6,
+        "cost": 14.96264,
+        "average": 0.7634,
+        "filled": 19.6,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "XRP",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68431"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "XRP/BUSD",
+                "id": "68431",
+                "order": "484601",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 0.7634,
+                "amount": 19.6,
+                "cost": 14.96264,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "XRP"
+                },
+                "fees": [
+                    {
+                        "currency": "XRP",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "XRP",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "LTCBUSD",
+            "orderId": "61038",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82b7009f1a3b2a1f02680e45",
+            "transactTime": "1651429517945",
+            "price": "0.00000000",
+            "origQty": "0.24850000",
+            "executedQty": "0.24850000",
+            "cummulativeQuoteQty": "24.99910000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10660"
+                }
+            ]
+        },
+        "id": "61038",
+        "clientOrderId": "x-R4BD3S82b7009f1a3b2a1f02680e45",
+        "timestamp": 1651429517945,
+        "datetime": "2022-05-01T18:25:17.945Z",
+        "lastTradeTimestamp": null,
+        "symbol": "LTC/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 100.6,
+        "stopPrice": null,
+        "amount": 0.2485,
+        "cost": 24.9991,
+        "average": 100.6,
+        "filled": 0.2485,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "LTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10660"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "LTC/BUSD",
+                "id": "10660",
+                "order": "61038",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 100.6,
+                "amount": 0.2485,
+                "cost": 24.9991,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "LTC"
+                },
+                "fees": [
+                    {
+                        "currency": "LTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "LTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "BTCUSDT",
+            "orderId": "11409004",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82de0370254559791f2cb3a2",
+            "transactTime": "1651429571220",
+            "price": "0.00000000",
+            "origQty": "0.00065400",
+            "executedQty": "0.00065400",
+            "cummulativeQuoteQty": "24.99933966",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "38225.29000000",
+                    "qty": "0.00065400",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290300"
+                }
+            ]
+        },
+        "id": "11409004",
+        "clientOrderId": "x-R4BD3S82de0370254559791f2cb3a2",
+        "timestamp": 1651429571220,
+        "datetime": "2022-05-01T18:26:11.220Z",
+        "lastTradeTimestamp": null,
+        "symbol": "BTC/USDT",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 38225.29,
+        "stopPrice": null,
+        "amount": 0.000654,
+        "cost": 24.99933966,
+        "average": 38225.29,
+        "filled": 0.000654,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "BTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "38225.29000000",
+                    "qty": "0.00065400",
+                    "commission": "0.00000000",
+                    "commissionAsset": "BTC",
+                    "tradeId": "3290300"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "BTC/USDT",
+                "id": "3290300",
+                "order": "11409004",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 38225.29,
+                "amount": 0.000654,
+                "cost": 24.99933966,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "BTC"
+                },
+                "fees": [
+                    {
+                        "currency": "BTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "BTC",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "XRPBUSD",
+            "orderId": "484602",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S82accb20ff5cb0183415a013",
+            "transactTime": "1651429574231",
+            "price": "0.00000000",
+            "origQty": "19.60000000",
+            "executedQty": "19.60000000",
+            "cummulativeQuoteQty": "14.96264000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68432"
+                }
+            ]
+        },
+        "id": "484602",
+        "clientOrderId": "x-R4BD3S82accb20ff5cb0183415a013",
+        "timestamp": 1651429574231,
+        "datetime": "2022-05-01T18:26:14.231Z",
+        "lastTradeTimestamp": null,
+        "symbol": "XRP/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 0.7634,
+        "stopPrice": null,
+        "amount": 19.6,
+        "cost": 14.96264,
+        "average": 0.7634,
+        "filled": 19.6,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "XRP",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "0.76340000",
+                    "qty": "19.60000000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "XRP",
+                    "tradeId": "68432"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "XRP/BUSD",
+                "id": "68432",
+                "order": "484602",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 0.7634,
+                "amount": 19.6,
+                "cost": 14.96264,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "XRP"
+                },
+                "fees": [
+                    {
+                        "currency": "XRP",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "XRP",
+                "cost": 0.0
+            }
+        ]
+    },
+    {
+        "info": {
+            "symbol": "LTCBUSD",
+            "orderId": "61039",
+            "orderListId": "-1",
+            "clientOrderId": "x-R4BD3S822202238ec09c1b7c81efde",
+            "transactTime": "1651429577262",
+            "price": "0.00000000",
+            "origQty": "0.24850000",
+            "executedQty": "0.24850000",
+            "cummulativeQuoteQty": "24.99910000",
+            "status": "FILLED",
+            "timeInForce": "GTC",
+            "type": "MARKET",
+            "side": "BUY",
+            "fills": [
+                {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10661"
+                }
+            ]
+        },
+        "id": "61039",
+        "clientOrderId": "x-R4BD3S822202238ec09c1b7c81efde",
+        "timestamp": 1651429577262,
+        "datetime": "2022-05-01T18:26:17.262Z",
+        "lastTradeTimestamp": null,
+        "symbol": "LTC/BUSD",
+        "type": "market",
+        "timeInForce": "IOC",
+        "postOnly": false,
+        "side": "buy",
+        "price": 100.6,
+        "stopPrice": null,
+        "amount": 0.2485,
+        "cost": 24.9991,
+        "average": 100.6,
+        "filled": 0.2485,
+        "remaining": 0.0,
+        "status": "closed",
+        "fee": {
+            "currency": "LTC",
+            "cost": 0.0
+        },
+        "trades": [
+            {
+                "info": {
+                    "price": "100.60000000",
+                    "qty": "0.24850000",
+                    "commission": "0.00000000",
+                    "commissionAsset": "LTC",
+                    "tradeId": "10661"
+                },
+                "timestamp": null,
+                "datetime": null,
+                "symbol": "LTC/BUSD",
+                "id": "10661",
+                "order": "61039",
+                "type": "market",
+                "side": "buy",
+                "takerOrMaker": null,
+                "price": 100.6,
+                "amount": 0.2485,
+                "cost": 24.9991,
+                "fee": {
+                    "cost": 0.0,
+                    "currency": "LTC"
+                },
+                "fees": [
+                    {
+                        "currency": "LTC",
+                        "cost": "0.00000000"
+                    }
+                ]
+            }
+        ],
+        "fees": [
+            {
+                "currency": "LTC",
+                "cost": 0.0
+            }
+        ]
+    }
+]

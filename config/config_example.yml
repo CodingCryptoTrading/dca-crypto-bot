@@ -1,0 +1,35 @@
+COINS:     # List of coins to buy. These are just examples mainly for the test mode. For real purchases, make your own list!
+    BTC:
+        PAIRING: USDT         # Choose the currency to use to buy the coin
+        AMOUNT: 25            # Quantity to buy in your pairing currency
+        CYCLE: 'daily'        # Recurring Cycle can be: 'daily', 'weekly', 'bi-weekly', 'monthly'
+        ON_WEEKDAY: 6         # [only for weekly and bi-weekly] Repeats on 0-6 (0=Monday...6=Sunday)
+        ON_DAY: 1             # [only for monthly]. Date of the month [1-28]
+        AT_TIME: '19:30'      # Format: 0 <= hour <= 23, 0 <= minute <= 59
+    XRP:
+        PAIRING: BUSD         # Choose the currency to use to buy the coin
+        AMOUNT: 15            # Quantity to buy in your pairing currency
+        CYCLE: 'weekly'       # Recurring Cycle can be: 'daily', 'weekly', 'bi-weekly', 'monthly'
+        ON_WEEKDAY: 3         # [only for weekly and bi-weekly] Repeats on 0-6 (0=Monday...6=Sunday)
+        AT_TIME: '08:00'      # Format: 0 <= hour <= 23, 0 <= minute <= 59
+    LTC:
+        PAIRING: BUSD         # Choose the currency to use to buy the coin
+        AMOUNT: 25            # Quantity to buy in your pairing currency
+        CYCLE: 'bi-weekly'    # Recurring Cycle can be: 'daily', 'weekly', 'bi-weekly', 'monthly'
+        ON_WEEKDAY: 3         # [only for weekly and bi-weekly] Repeats on 0-6 (0=Monday...6=Sunday)
+        AT_TIME: '20:00'      # Format: 0 <= hour <= 23, 0 <= minute <= 59
+
+### Exchange section ###
+EXCHANGE: 'binance'
+TEST: True
+
+### Notification section ###
+SEND_NOTIFICATIONS: True
+
+# email sender info
+EMAIL_ADDRESS_FROM: 'sender@email.com'
+EMAIL_PASSWORD: 'sender email password'
+SMTP_SERVER: 'smtp.mail.yahoo.com' # sender email SMTP server
+
+# email recipient
+EMAIL_ADDRESS_TO: 'recipient@email.com'

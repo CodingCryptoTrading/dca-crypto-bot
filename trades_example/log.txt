@@ -1,0 +1,106 @@
+2022-05-01 20:20:08 Program started. Initializing variables...
+2022-05-01 20:20:08 Connected to binance in TEST mode!
+2022-05-01 20:20:08 Getting your balance from the exchange:
+2022-05-01 20:20:10 
+               free  used          total
+TRX   634899.900000   0.0  634899.900000
+XRP    57924.300000   0.0   57924.300000
+USDT    3473.306174   0.0    3473.306174
+BUSD    2807.888812   0.0    2807.888812
+BNB     1000.000000   0.0    1000.000000
+LTC      505.644760   0.0     505.644760
+ETH      100.000000   0.0     100.000000
+BTC        0.931099   0.0       0.931099
+2022-05-01 20:20:13 Everything up and running!
+2022-05-01 20:20:13 Initializing next order...
+2022-05-01 20:20:13 Next purchase: BTC (25 USDT) on 2022-05-01 20:20.
+Time remaining: 0 s
+2022-05-01 20:20:14 -> Bought 0.000652 BTC at price 38326.39 USDT (Cost = 24.98880628 USDT)
+2022-05-01 20:20:16 Initializing next order...
+2022-05-01 20:20:17 Next purchase: XRP (15 BUSD) on 2022-05-01 20:20.
+Time remaining: 0 s
+2022-05-01 20:20:17 -> Bought 19.6 XRP at price 0.7634 BUSD (Cost = 14.96264 BUSD)
+2022-05-01 20:20:20 Initializing next order...
+2022-05-01 20:20:21 Next purchase: LTC (25 BUSD) on 2022-05-01 20:20.
+Time remaining: 0 s
+2022-05-01 20:20:21 -> Bought 0.2485 LTC at price 100.6 BUSD (Cost = 24.9991 BUSD)
+2022-05-01 20:20:24 Initializing next order...
+2022-05-01 20:20:24 Next purchase: BTC (25 USDT) on 2022-05-01 20:21.
+Time remaining: 45 s
+2022-05-01 20:21:11 -> Bought 0.000653 BTC at price 38252.67 USDT (Cost = 24.97899351 USDT)
+2022-05-01 20:21:13 Initializing next order...
+2022-05-01 20:21:14 Next purchase: XRP (15 BUSD) on 2022-05-01 20:21.
+Time remaining: 0 s
+2022-05-01 20:21:14 -> Bought 19.6 XRP at price 0.7634 BUSD (Cost = 14.96264 BUSD)
+2022-05-01 20:21:17 Initializing next order...
+2022-05-01 20:21:18 Next purchase: LTC (25 BUSD) on 2022-05-01 20:21.
+Time remaining: 0 s
+2022-05-01 20:21:18 -> Bought 0.2485 LTC at price 100.6 BUSD (Cost = 24.9991 BUSD)
+2022-05-01 20:21:20 Initializing next order...
+2022-05-01 20:21:21 Next purchase: BTC (25 USDT) on 2022-05-01 20:22.
+Time remaining: 49 s
+2022-05-01 20:22:11 -> Bought 0.000653 BTC at price 38255.12 USDT (Cost = 24.98059336 USDT)
+2022-05-01 20:22:13 Initializing next order...
+2022-05-01 20:22:14 Next purchase: XRP (15 BUSD) on 2022-05-01 20:22.
+Time remaining: 0 s
+2022-05-01 20:22:14 -> Bought 19.6 XRP at price 0.7634 BUSD (Cost = 14.96264 BUSD)
+2022-05-01 20:22:17 Initializing next order...
+2022-05-01 20:22:17 Next purchase: LTC (25 BUSD) on 2022-05-01 20:22.
+Time remaining: 0 s
+2022-05-01 20:22:18 -> Bought 0.2485 LTC at price 100.6 BUSD (Cost = 24.9991 BUSD)
+2022-05-01 20:22:20 Initializing next order...
+2022-05-01 20:22:21 Next purchase: BTC (25 USDT) on 2022-05-01 20:23.
+Time remaining: 49 s
+2022-05-01 20:23:11 -> Bought 0.000653 BTC at price 38240.61 USDT (Cost = 24.97111833 USDT)
+2022-05-01 20:23:14 Initializing next order...
+2022-05-01 20:23:14 Next purchase: XRP (15 BUSD) on 2022-05-01 20:23.
+Time remaining: 0 s
+2022-05-01 20:23:15 -> Bought 19.6 XRP at price 0.7634 BUSD (Cost = 14.96264 BUSD)
+2022-05-01 20:23:17 Initializing next order...
+2022-05-01 20:23:18 Next purchase: LTC (25 BUSD) on 2022-05-01 20:23.
+Time remaining: 0 s
+2022-05-01 20:23:19 -> Bought 0.2485 LTC at price 100.6 BUSD (Cost = 24.9991 BUSD)
+2022-05-01 20:23:21 Initializing next order...
+2022-05-01 20:23:22 Next purchase: BTC (25 USDT) on 2022-05-01 20:24.
+Time remaining: 48 s
+2022-05-01 20:24:11 -> Bought 0.000653 BTC at price 38255.15 USDT (Cost = 24.98061295 USDT)
+2022-05-01 20:24:13 Initializing next order...
+2022-05-01 20:24:14 Next purchase: XRP (15 BUSD) on 2022-05-01 20:24.
+Time remaining: 0 s
+2022-05-01 20:24:14 -> Bought 19.6 XRP at price 0.7634 BUSD (Cost = 14.96264 BUSD)
+2022-05-01 20:24:17 Initializing next order...
+2022-05-01 20:24:17 Next purchase: LTC (25 BUSD) on 2022-05-01 20:24.
+Time remaining: 0 s
+2022-05-01 20:24:18 -> Bought 0.2485 LTC at price 100.6 BUSD (Cost = 24.9991 BUSD)
+2022-05-01 20:24:20 Initializing next order...
+2022-05-01 20:24:20 Next purchase: BTC (25 USDT) on 2022-05-01 20:25.
+Time remaining: 49 s
+2022-05-01 20:25:11 -> Bought 0.000653 BTC at price 38231.33 USDT (Cost = 24.96505849 USDT)
+2022-05-01 20:25:13 Initializing next order...
+2022-05-01 20:25:14 Next purchase: XRP (15 BUSD) on 2022-05-01 20:25.
+Time remaining: 0 s
+2022-05-01 20:25:14 -> Bought 19.6 XRP at price 0.7634 BUSD (Cost = 14.96264 BUSD)
+2022-05-01 20:25:16 WARNING SEND MAIL SMTPServerDisconnected Connection unexpectedly closed
+2022-05-01 20:25:16 Initializing next order...
+2022-05-01 20:25:17 Next purchase: LTC (25 BUSD) on 2022-05-01 20:25.
+Time remaining: 0 s
+2022-05-01 20:25:17 -> Bought 0.2485 LTC at price 100.6 BUSD (Cost = 24.9991 BUSD)
+2022-05-01 20:25:19 WARNING SEND MAIL SMTPServerDisconnected Connection unexpectedly closed
+2022-05-01 20:25:19 Initializing next order...
+2022-05-01 20:25:19 Next purchase: BTC (25 USDT) on 2022-05-01 20:26.
+Time remaining: 51 s
+2022-05-01 20:26:11 -> Bought 0.000654 BTC at price 38225.29 USDT (Cost = 24.99933966 USDT)
+2022-05-01 20:26:12 WARNING SEND MAIL SMTPServerDisconnected Connection unexpectedly closed
+2022-05-01 20:26:12 Initializing next order...
+2022-05-01 20:26:13 Next purchase: XRP (15 BUSD) on 2022-05-01 20:26.
+Time remaining: 0 s
+2022-05-01 20:26:14 -> Bought 19.6 XRP at price 0.7634 BUSD (Cost = 14.96264 BUSD)
+2022-05-01 20:26:15 WARNING SEND MAIL SMTPServerDisconnected Connection unexpectedly closed
+2022-05-01 20:26:15 Initializing next order...
+2022-05-01 20:26:16 Next purchase: LTC (25 BUSD) on 2022-05-01 20:26.
+Time remaining: 0 s
+2022-05-01 20:26:17 -> Bought 0.2485 LTC at price 100.6 BUSD (Cost = 24.9991 BUSD)
+2022-05-01 20:26:18 WARNING SEND MAIL SMTPServerDisconnected Connection unexpectedly closed
+2022-05-01 20:26:18 Initializing next order...
+2022-05-01 20:26:19 Next purchase: BTC (25 USDT) on 2022-05-01 20:27.
+Time remaining: 51 s

@@ -1,0 +1,12 @@
+BINANCE:
+  TEST: # https://testnet.binance.vision
+    APIKEY: 'place here your API key'
+    SECRET: 'place here your secret'
+  REAL:
+    APIKEY: 'place here your API key'
+    SECRET: 'place here your secret'
+FTX:
+  REAL:
+    APIKEY: 'place here your API key'
+    SECRET: 'place here your secret'
+
