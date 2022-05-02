@@ -17,7 +17,7 @@ The bot was developed to overcome the above limitations. In particular, the bot
  - reminds you to top up your account in case the balance is not enough for the next purchase. 
 
 ## Getting started
-___
+
 ### Requirements
 You will need a server that can run continuously (i.e., 24/7). Due to its extreme low power consumption, a Raspberry Pi is an ideal candidate for the job.
 You will need **python 3.8** and the following packages:
@@ -107,7 +107,6 @@ If at any time you wish to create a new accumulation plan from scratch (not cons
 
 
 ## Running the bot in test mode
-____
 
 If a sendbox is available in the chosen exchange, the bot can operate in testing mode (e.g., binance offers this service). Thus, you can use the test mode in case you want to try the bot with fake money first. The test mode can also be helpful for debugging purposes.
 
@@ -116,9 +115,7 @@ To set the bot to run in test mode, set `TEST: True` in your `config/config.yml`
 Getting a test account in Binance is straightforward. Just log in with a github account in [the binance testnet](https://testnet.binance.vision/) and then click on generate API keys.
 
 ## Contributing
-____
 Any contribution to the bot is welcomed. If you have a suggestion or find a bug, please create an [issue](TOBEDEFINED).
 
 ## Disclaimer
-____
  The investment in cryptocurrency can lead to loss of money over short or even long periods. Use DCA-bot at your own risk. 
