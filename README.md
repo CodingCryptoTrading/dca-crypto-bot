@@ -90,7 +90,6 @@ And add the following line:
 To check that everything is working, try restarting the server. Once rebooted you should be notified that the bot has just started. Now you can enjoy recurring purchases at minimal cost and without any effort!
 
 ## Check the bot
-___
 If you have activated the notification system, you will receive all the relevant information by mail, including buy outcomes, investment summaries, general info, warnings and errors.
 
 Even if you have disabled notifications, you can still get all the information by accessing the  `trades` folder that will be created once the bot is started. An example  of a `trades` folder is available in [trades_example](trades_example/). Inside you will find:
@@ -115,7 +114,7 @@ To set the bot to run in test mode, set `TEST: True` in your `config/config.yml`
 Getting a test account in Binance is straightforward. Just log in with a github account in [the binance testnet](https://testnet.binance.vision/) and then click on generate API keys.
 
 ## Contributing
-Any contribution to the bot is welcomed. If you have a suggestion or find a bug, please create an [issue](TOBEDEFINED).
+Any contribution to the bot is welcomed. If you have a suggestion or find a bug, please create an [issue](https://github.com/CodingCryptoTrading/dca-crypto-bot/issues).
 
 ## Disclaimer
  The investment in cryptocurrency can lead to loss of money over short or even long periods. Use DCA-bot at your own risk. 
