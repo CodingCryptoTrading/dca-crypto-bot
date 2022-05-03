@@ -1,5 +1,3 @@
-import datetime
-
 
 def get_on_weekday(x):
     """
@@ -31,7 +29,7 @@ def get_hour_minute(at_time):
         # in this case assume there are no minutes:
         hours = at_time
         minutes = 0
-    elif isinstance(at_time,str):
+    elif isinstance(at_time, str):
         # convert to integers:
         at_time = [int(x) for x in at_time.split(':')]
         if len(at_time) == 1:

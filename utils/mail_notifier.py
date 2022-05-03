@@ -166,7 +166,7 @@ class Notifier(object):
         msg['From'] = self.sent_from
         msg.preamble = """
         Your mail reader does not support the report format.
-        Please visit us online!"""
+        """
 
         # Record the MIME type text/html.
         html_body = MIMEText(body, 'html')

@@ -55,11 +55,6 @@ def get_quantity_to_buy(exchange, amount, symbol):
     return amount
 
 
-def buy(exchange, coins, coin):
-    exchange.create_market_buy_order(coins[coin]['SYMBOL'],
-                                     get_quantity_to_buy(exchange, coins[coin]['AMOUNT'], coins[coin]['SYMBOL']))
-
-
 def order_to_dataframe(order, coin):
 
     data = {'datetime (local)': datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
@@ -109,7 +104,3 @@ def connect_to_exchange(cfg, api):
         #are_you_sure_to_continue()
 
     return exchange
-
-    # Show balance
-    print("Getting your balance from the exchange:")
-    print(get_non_zero_balance(exchange, sort_by='total'))
