@@ -377,8 +377,8 @@ class Dca(object):
 
 if __name__ == "__main__":
 
-    cfg_path = 'config/config_example.yml'
-    api_path = 'auth/API_keys_example.yml'
+    cfg_path = 'config/config.yml'
+    api_path = 'auth/API_keys.yml'
 
     # Run the bot
     Dca(cfg_path, api_path)
