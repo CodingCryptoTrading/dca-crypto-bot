@@ -48,6 +48,12 @@ def get_non_zero_balance(exchange, sort_by='total', ascending=False ):
     return df
 
 
+def get_price(exchange, symbol):
+    exchange.load_markets()
+    last_price = exchange.fetch_ticker(symbol)['last']
+    return last_price
+
+
 def get_quantity_to_buy(exchange, amount, symbol):
     exchange.load_markets()
     last_price = exchange.fetch_ticker(symbol)['last']

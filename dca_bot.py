@@ -159,6 +159,7 @@ class Dca(object):
         time.sleep(time_remaining)
 
     def buy(self):
+
         order = self.execute_order(self.coin_to_buy)
         # print and save order info:
         if order:
@@ -185,7 +186,21 @@ class Dca(object):
         side = 'buy'
         symbol = self.coin[coin]['SYMBOL']
         price = None
+
         try:
+            if 'DONTBUYABOVE' in self.coin[coin] and self.coin[coin]['DONTBUYABOVE'] is not None:
+                # check if the condition is met
+                price = get_price(self.exchange, self.coin[coin]['SYMBOL'])
+                if price > self.coin[coin]['DONTBUYABOVE']:
+                    self.update_next_datetime(coin)
+                    # reset error variable (not sure this cover well all the cases...)
+                    self.coin[coin]['LASTERROR'] = []
+                    self.coin[coin]['ERROR_ATTEMPT'] = 0
+                    string_order = f"{coin} price above buy condition: {price} {self.coin[coin]['PAIRING']}." \
+                                   f" Skipping this iteration."
+                    logging.info("" + string_order)
+                    return False
+
             if 'binance' in self.exchange.id:
                 # this order strategy should take care of everything (precision and lot size)
                 params = {
@@ -196,6 +211,7 @@ class Dca(object):
                 # In case the above is not available on the exchange use the following
                 amount = get_quantity_to_buy(self.exchange, self.coin[coin]['AMOUNT'], symbol)
                 order = self.exchange.create_order(symbol, type_order, side, amount, price)
+
             self.update_next_datetime(coin)
             # reset error variable
             self.coin[coin]['LASTERROR'] = []
