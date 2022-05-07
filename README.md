@@ -34,6 +34,8 @@ After choosing one of the [ccxt](https://github.com/ccxt/ccxt) supported exchang
 
 Then, input the generated key and secret in [auth/API_keys_example.yml](auth/API_keys_example.yml) and save it as `auth.yml`. Maintain the syntax as in the example file. In particular, after the name of the exchange be sure to specify if it is a *REAL* or *TEST* account (more on test accounts [here](#running-the-bot-in-test-mode)) 
 
+Some exchanges (e.g., *coinbasepro*) may require an additional API parameter, sometimes called passphrase or password. If that is the case, put it under the voice *PASSPHRASE*. 
+
 ### Configure the bot
 The bot settings are stored in [config/config_example.yml](config/config_example.yml). Make a copy of the file and rename it as  `config.yml`. Fill the file with your own settings.
 

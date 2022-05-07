@@ -88,14 +88,25 @@ def connect_to_exchange(cfg, api):
     """
     api_test_selector = 'TEST' if cfg['TEST'] else 'REAL'
 
-    exchange_id = cfg['EXCHANGE']
-    exchange_class = getattr(ccxt, exchange_id)
-    exchange = exchange_class({
-        'apiKey': api[exchange_id.upper()][api_test_selector]['APIKEY'],
-        'secret': api[exchange_id.upper()][api_test_selector]['SECRET'],
-        'enableRateLimit': True,
-        'options': {'adjustForTimeDifference': True}
-    })
+    exchange_id = cfg['EXCHANGE'].upper()
+    if 'PASSPHRASE' in api[exchange_id]:
+        exchange_class = getattr(ccxt, exchange_id.lower())
+        exchange = exchange_class({
+            'apiKey': api[exchange_id][api_test_selector]['APIKEY'],
+            'secret': api[exchange_id][api_test_selector]['SECRET'],
+            'password': api[exchange_id][api_test_selector]['PASSPHRASE'],
+            'enableRateLimit': True,
+            'options': {'adjustForTimeDifference': True}
+        })
+    else:
+        exchange_class = getattr(ccxt, exchange_id.lower())
+        exchange = exchange_class({
+            'apiKey': api[exchange_id][api_test_selector]['APIKEY'],
+            'secret': api[exchange_id][api_test_selector]['SECRET'],
+            'enableRateLimit': True,
+            'options': {'adjustForTimeDifference': True}
+        })
+
     if 'TEST' in api_test_selector:
         logging.info(f"Connected to {exchange_id} in TEST mode!")
         exchange.set_sandbox_mode(True)

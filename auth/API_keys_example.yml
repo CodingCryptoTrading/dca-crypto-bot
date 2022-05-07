@@ -5,8 +5,17 @@ BINANCE:
   REAL:
     APIKEY: 'place here your API key'
     SECRET: 'place here your secret'
+
 FTX:
   REAL:
     APIKEY: 'place here your API key'
     SECRET: 'place here your secret'
+
+# Some exchanges may require an additional parameter, e.g:
+COINBASEPRO:
+  REAL:
+    APIKEY: 'place here your API key'
+    SECRET: 'place here your secret'
+    PASSPHRASE: 'place here your passphrase (sometimes called password)'
+
 
