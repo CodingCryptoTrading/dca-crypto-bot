@@ -24,12 +24,16 @@ def check_cost_limits(exchange, coins):
         symbol = coins[coin]['SYMBOL']
         cost = coins[coin]['AMOUNT']
         market = exchange.market(symbol)
-
-        min_ = market['limits']['cost']['min']
-        max_ = market['limits']['cost']['max']
-        if (min_ is not None and cost <= min_) or (max_ is not None and cost >= max_):
-            raise ExceededAmountLimits(symbol, min_, max_)
-
+        if type(cost) is dict:
+            min_ = market['limits']['cost']['min']
+            max_ = market['limits']['cost']['max']
+            if (min_ is not None and cost['RANGE'][0] <= min_) or (max_ is not None and cost['RANGE'][1] >= max_):
+                raise ExceededAmountLimits(symbol, min_, max_)
+        else:
+            min_ = market['limits']['cost']['min']
+            max_ = market['limits']['cost']['max']
+            if (min_ is not None and cost <= min_) or (max_ is not None and cost >= max_):
+                raise ExceededAmountLimits(symbol, min_, max_)
 
 def get_non_zero_balance(exchange, sort_by='total', ascending=False ):
     """Get non zero balance (total,free and used). Use "sort_by" to sort

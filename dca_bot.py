@@ -2,6 +2,7 @@ from utils.timing import *
 from utils.exchange import *
 from utils.stats_and_plots import *
 from utils.mail_notifier import Notifier
+from utils.trade_strategies import PriceMapper
 
 import ccxt
 import logging
@@ -75,8 +76,12 @@ class Dca(object):
         # define path for order_book (next_purchases)
         self.order_book_path = Path('trades/next_purchases.csv')
 
+        # check if the amount is fixed or is variable depending on the price range
+        self.get_DCA_strategy()
+
         # Get the 'SCHEDULE' time for each coin and initialize order_book
         self.initialize_order_book()
+        self.update_order_book()  # ensure the order book is written to disk and next coin to buy is set
 
         # get retry times for errors
         self.retry_for_funds, self.retry_for_network = retry_info()
@@ -92,8 +97,8 @@ class Dca(object):
 
         while True:
 
-            logging.info('Initializing next order...')
-            self.find_next_order()
+            #logging.info('Initializing next order...')
+            #self.find_next_order()
 
             # do not check funds if last attempt failed due to insufficient Funds
             if not isinstance(self.coin[self.coin_to_buy]['LASTERROR'], ccxt.InsufficientFunds):
@@ -103,12 +108,63 @@ class Dca(object):
 
             self.buy()
 
-    def find_next_order(self):
+            self.update_order_book()
+
+    def update_order_book(self):
         """
-        Find (and set) the closest coin to buy.
-        Also, write to disk the order_book. The order_book is required to identify the correct bi-weekly purchase time
+        Write to disk the order_book. The order_book is required to identify the correct bi-weekly purchase time
         in case the bot is restarted.
+        Also, Find (and set) the closest coin to buy.
         """
+
+        # first element is the coin, second element the time
+        self.next_order = min(self.order_book.items(), key=lambda x: x[1])
+        self.coin_to_buy = self.next_order[0]
+
+        # Save the order book to disk
+        ordered_order_book = dict(sorted(self.order_book.items(), key=lambda item: item[1]))
+        df = pd.DataFrame([ordered_order_book]).T.rename_axis('Coin').rename(columns={0: 'Purchase Time'})
+        cycle = []
+        strategy = []
+        for coin in df.index:
+            cycle.append(self.coin[coin]['CYCLE'].lower())
+            strategy.append(self.coin[coin]['STRATEGY_STRING'])
+        df['Cycle'] = cycle
+        df['Strategy'] = strategy
+        df.to_csv(self.order_book_path)
+        return df
+
+    def get_DCA_strategy(self):
+        for coin in self.coin:
+            if type(self.coin[coin]['AMOUNT']) is dict:
+
+                # todo check input
+                self.coin[coin]['MAPPER'] = PriceMapper(self.coin[coin]['AMOUNT']['RANGE'],
+                                                        self.coin[coin]['AMOUNT']['PRICE_RANGE'],
+                                                        self.coin[coin]['AMOUNT']['MAPPING'])
+                self.coin[coin]['STRATEGY'] = 'Variable Amount'
+                cost = f"{self.coin[coin]['AMOUNT']['RANGE'][0]}-" \
+                       f"{self.coin[coin]['AMOUNT']['RANGE'][1]}"
+                price_range = f"{self.coin[coin]['AMOUNT']['PRICE_RANGE'][0]}-" \
+                       f"{self.coin[coin]['AMOUNT']['PRICE_RANGE'][1]}"
+                self.coin[coin]['STRATEGY_STRING'] = f"Variable Amount ({cost} {self.coin[coin]['PAIRING']}, {price_range} {coin}, {self.coin[coin]['AMOUNT']['MAPPING']})"
+                if 'BUYBELOW' in self.coin[coin] and self.coin[coin]['BUYBELOW'] is not None:
+                    logging.warning('Option "BUYBELOW" is not compatible with a range of AMOUNT values. '
+                                    'Disabling it')
+                    self.coin[coin]['BUYBELOW'] = None
+            elif 'BUYBELOW' in self.coin[coin] and self.coin[coin]['BUYBELOW'] is not None:
+                self.coin[coin]['STRATEGY'] = 'Buy Below'
+                self.coin[coin]['STRATEGY_STRING'] = f"Buy Below {self.coin[coin]['BUYBELOW']} {coin}"
+            else:
+                self.coin[coin]['STRATEGY'] = 'Classic'
+                self.coin[coin]['STRATEGY_STRING'] = f"Classic"
+
+        for coin in self.coin:
+            print('TODO: print strategy')
+
+
+    def find_next_order(self):
+
         # first element is the coin, second element the time
         self.next_order = min(self.order_book.items(), key=lambda x: x[1])
         self.coin_to_buy = self.next_order[0]
@@ -117,9 +173,12 @@ class Dca(object):
         ordered_order_book = dict(sorted(self.order_book.items(), key=lambda item: item[1]))
         df = pd.DataFrame([ordered_order_book]).T.rename_axis('Coin').rename(columns={0: 'Purchase Time'})
         cycle = []
+        strategy = []
         for coin in df.index:
             cycle.append(self.coin[coin]['CYCLE'].lower())
+            strategy.append(self.coin[coin]['STRATEGY_STRING'])
         df['Cycle'] = cycle
+        df['Strategy'] = strategy
         df.to_csv(self.order_book_path)
 
     def check_funds(self):
@@ -127,6 +186,8 @@ class Dca(object):
         Check if there is sufficient money for the next purchase
         """
         cost = self.coin[self.coin_to_buy]['AMOUNT']
+        if type(cost) is dict:
+            cost = cost['RANGE'][1]  # In this case we check for the maximum possible amount
         pairing = self.coin[self.coin_to_buy]['PAIRING']
         try:
             balance = self.exchange.fetch_balance()
@@ -152,7 +213,12 @@ class Dca(object):
         time_remaining = (self.next_order[1] - datetime.datetime.today()).total_seconds()
         if time_remaining < 0:
             time_remaining = 0
-        logging.info(f"Next purchase: {self.next_order[0]} ({self.coin[self.next_order[0]]['AMOUNT']} "
+        if self.coin[self.next_order[0]]['STRATEGY'] == 'Variable Amount':
+            cost = f"{self.coin[self.next_order[0]]['AMOUNT']['RANGE'][0]}-" \
+                   f"{self.coin[self.next_order[0]]['AMOUNT']['RANGE'][1]}"
+        else:
+            cost = self.coin[self.next_order[0]]['AMOUNT']
+        logging.info(f"Next purchase: {self.next_order[0]} ({cost} "
                      f"{self.coin[self.next_order[0]]['PAIRING']}) on {self.next_order[1].strftime('%Y-%m-%d %H:%M')}."
                      f"\nTime remaining: {int(time_remaining)} s")
 
@@ -179,7 +245,8 @@ class Dca(object):
                                     next_purchase,
                                     datetime.datetime.now().strftime('%d %b %Y at %H:%M'),
                                     self.coin[self.coin_to_buy]['PAIRING'],
-                                    self.df_stats.loc[self.coin_to_buy])
+                                    self.df_stats.loc[self.coin_to_buy],
+                                    self.coin[self.coin_to_buy]['STRATEGY_STRING'])
 
     def execute_order(self, coin):
         type_order = 'market'
@@ -188,28 +255,43 @@ class Dca(object):
         price = None
 
         try:
-            if 'DONTBUYABOVE' in self.coin[coin] and self.coin[coin]['DONTBUYABOVE'] is not None:
+            if self.coin[coin]['STRATEGY'] == 'Buy Below':
                 # check if the condition is met
                 price = get_price(self.exchange, self.coin[coin]['SYMBOL'])
-                if price > self.coin[coin]['DONTBUYABOVE']:
+                if price > self.coin[coin]['BUYBELOW']:
                     self.update_next_datetime(coin)
                     # reset error variable (not sure this cover well all the cases...)
                     self.coin[coin]['LASTERROR'] = []
                     self.coin[coin]['ERROR_ATTEMPT'] = 0
-                    string_order = f"{coin} price above buy condition: {price} {self.coin[coin]['PAIRING']}." \
-                                   f" Skipping this iteration."
+                    string_order = f"{coin} price above buy condition ({price} {self.coin[coin]['PAIRING']})." \
+                                   f" This iteration will be skipped."
                     logging.info("" + string_order)
                     return False
+            elif self.coin[coin]['STRATEGY'] == 'Variable Amount':
+                # check the precise and calculate the amount
+                price = get_price(self.exchange, self.coin[coin]['SYMBOL'])
+                amount = self.coin[coin]['MAPPER'].get_amount(price)
+                if amount == 0:
+                    self.update_next_datetime(coin)
+                    # reset error variable (not sure this cover well all the cases...)
+                    self.coin[coin]['LASTERROR'] = []
+                    self.coin[coin]['ERROR_ATTEMPT'] = 0
+                    string_order = f"{coin} price above buy condition ({price} {self.coin[coin]['PAIRING']})." \
+                                   f" This iteration will be skipped."
+                    logging.info("" + string_order)
+                    return False
+            else:
+                amount = self.coin[coin]['AMOUNT']
 
             if 'binance' in self.exchange.id:
                 # this order strategy should take care of everything (precision and lot size)
                 params = {
-                    'quoteOrderQty': self.coin[coin]['AMOUNT'],
+                    'quoteOrderQty': amount,
                     }
-                order = self.exchange.create_order(symbol, type_order, side, self.coin[coin]['AMOUNT'], price, params)
+                order = self.exchange.create_order(symbol, type_order, side, amount, price, params)
             else:
                 # In case the above is not available on the exchange use the following
-                amount = get_quantity_to_buy(self.exchange, self.coin[coin]['AMOUNT'], symbol)
+                amount = get_quantity_to_buy(self.exchange, amount, symbol)
                 order = self.exchange.create_order(symbol, type_order, side, amount, price)
 
             self.update_next_datetime(coin)
