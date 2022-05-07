@@ -368,7 +368,7 @@ class Dca(object):
             self.order_book[coin] = self.coin[coin]['SCHEDULE']
 
             # Define symbol variable
-            self.coin[coin]['SYMBOL'] = coin + self.coin[coin]['PAIRING']
+            self.coin[coin]['SYMBOL'] = coin + '/' + self.coin[coin]['PAIRING']
 
             # set the error variables
             self.coin[coin]['LASTERROR'] = []
