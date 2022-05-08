@@ -23,7 +23,7 @@ class PriceMapper(object):
         if len(self.amounts) != 2:
             error_string = 'AMOUNT should be a list of 2 elements: min and max amount.'
             raise Exception(error_string)
-        if self.function not in ['linear', 'exponential']:
+        if self.function not in ['linear', 'exponential', 'constant']:
             error_string = 'Valid mapping functions are: "linear" and "exponential".'
             raise Exception(error_string)
 
@@ -85,6 +85,8 @@ class PriceMapper(object):
             return self.linear(price)
         elif self.function == 'exponential':
             return self.exponential(price)
+        elif self.function == 'constant':
+            return self.constant(price)
         else:
             error_string = 'Unrecognized mapping function'
             logging.error(error_string)
@@ -125,6 +127,21 @@ class PriceMapper(object):
             amount = k * np.exp(r * price)
         return amount
 
+    def constant(self, price):
+        # storing variables in letters for readability
+        A = self.amounts[0]
+        B = self.amounts[1]
+
+        C = self.prices[0]
+        D = self.prices[1]
+
+        if price < C:
+            amount = 0
+        elif price > D:
+            amount = 0
+        else:
+            amount = B
+        return amount
 
 
 

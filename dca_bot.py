@@ -81,8 +81,8 @@ class Dca(object):
 
         # Get the 'SCHEDULE' time for each coin and initialize order_book
         self.initialize_order_book()
-        df = self.update_order_book()  # ensure the order book is written to disk and next coin to buy is set
-        logging.info("Summary of the investment plans:\n" + df.to_string() +"\n")
+        df = self.update_order_book()  # ensure the order book is written to disk and the set the next coin to buy
+        logging.info("Summary of the investment plans:\n" + df.to_string() + "\n")
 
         # get retry times for errors
         self.retry_for_funds, self.retry_for_network = retry_info()
@@ -162,15 +162,18 @@ class Dca(object):
                                     'Disabling it')
                     self.coin[coin]['BUYBELOW'] = None
             elif 'BUYBELOW' in self.coin[coin] and self.coin[coin]['BUYBELOW'] is not None:
+                # in this case the mapper is only used for plotting
+                self.coin[coin]['MAPPER'] = PriceMapper([0, self.coin[coin]['AMOUNT']],
+                                                        [0, self.coin[coin]['BUYBELOW']],
+                                                        'constant',
+                                                        coin,
+                                                        self.coin[coin]['PAIRING'])
+                self.coin[coin]['MAPPER'].plot()
                 self.coin[coin]['STRATEGY'] = 'Buy Below'
                 self.coin[coin]['STRATEGY_STRING'] = f"Buy Below {self.coin[coin]['BUYBELOW']} {coin}"
             else:
                 self.coin[coin]['STRATEGY'] = 'Classic'
                 self.coin[coin]['STRATEGY_STRING'] = f"Classic"
-
-        for coin in self.coin:
-            print('TODO: print strategy')
-
 
     def find_next_order(self):
 
@@ -264,30 +267,14 @@ class Dca(object):
         price = None
 
         try:
-            if self.coin[coin]['STRATEGY'] == 'Buy Below':
+            if self.coin[coin]['STRATEGY'] == 'Buy Below' or self.coin[coin]['STRATEGY'] == 'Variable Amount':
                 # check if the condition is met
-                price = get_price(self.exchange, self.coin[coin]['SYMBOL'])
-                if price > self.coin[coin]['BUYBELOW']:
-                    self.update_next_datetime(coin)
-                    # reset error variable (not sure this cover well all the cases...)
-                    self.coin[coin]['LASTERROR'] = []
-                    self.coin[coin]['ERROR_ATTEMPT'] = 0
-                    string_order = f"{coin} price above buy condition ({price} {self.coin[coin]['PAIRING']})." \
-                                   f" This iteration will be skipped."
-                    logging.info("" + string_order)
-                    return False
-            elif self.coin[coin]['STRATEGY'] == 'Variable Amount':
-                # check the precise and calculate the amount
                 price = get_price(self.exchange, self.coin[coin]['SYMBOL'])
                 amount = self.coin[coin]['MAPPER'].get_amount(price)
                 if amount == 0:
-                    self.update_next_datetime(coin)
-                    # reset error variable (not sure this cover well all the cases...)
-                    self.coin[coin]['LASTERROR'] = []
-                    self.coin[coin]['ERROR_ATTEMPT'] = 0
                     string_order = f"{coin} price above buy condition ({price} {self.coin[coin]['PAIRING']})." \
                                    f" This iteration will be skipped."
-                    logging.info("" + string_order)
+                    self.handle_successful_trade(coin, string_order)
                     return False
             else:
                 amount = self.coin[coin]['AMOUNT']
@@ -302,11 +289,7 @@ class Dca(object):
                 # In case the above is not available on the exchange use the following
                 amount = get_quantity_to_buy(self.exchange, amount, symbol)
                 order = self.exchange.create_order(symbol, type_order, side, amount, price)
-
-            self.update_next_datetime(coin)
-            # reset error variable
-            self.coin[coin]['LASTERROR'] = []
-            self.coin[coin]['ERROR_ATTEMPT'] = 0
+            self.handle_successful_trade(coin)
             return order
         # Network errors: these are non-critical errors (recoverable)
         except (ccxt.DDoSProtection, ccxt.ExchangeNotAvailable,
@@ -335,6 +318,15 @@ class Dca(object):
                 self.notify.critical(e, when)
             raise e
         return False
+
+    def handle_successful_trade(self, coin, string=None):
+        # This steps are common to all dca strategy
+        self.update_next_datetime(coin)
+        # reset error variable
+        self.coin[coin]['LASTERROR'] = []
+        self.coin[coin]['ERROR_ATTEMPT'] = 0
+        if string:
+            logging.info("" + string)
 
     def handle_recoverable_errors(self, coin, e):
         # wait (variable on cycle frequency) and retry
@@ -475,7 +467,7 @@ class Dca(object):
             self.order_book[coin] = self.coin[coin]['SCHEDULE']
 
             # Define symbol variable
-            self.coin[coin]['SYMBOL'] = coin + self.coin[coin]['PAIRING']
+            self.coin[coin]['SYMBOL'] = coin + '/' + self.coin[coin]['PAIRING']
 
             # set the error variables
             self.coin[coin]['LASTERROR'] = []
