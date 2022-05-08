@@ -10,6 +10,7 @@ import time
 from dateutil.relativedelta import relativedelta
 import pandas as pd
 from pathlib import Path
+import os
 
 
 class Dca(object):
@@ -40,9 +41,8 @@ class Dca(object):
 
         # Show balance
         try:
-            logging.info("Getting your balance from the exchange:")
             balance = get_non_zero_balance(self.exchange, sort_by='total')
-            logging.info("\n" + balance.to_string())
+            logging.info("Your balance from the exchange:\n" + balance.to_string() + "\n")
         except Exception as e:
             logging.warning("Balance checking failed: " + type(e).__name__ + " " + str(e))
 
@@ -81,7 +81,8 @@ class Dca(object):
 
         # Get the 'SCHEDULE' time for each coin and initialize order_book
         self.initialize_order_book()
-        self.update_order_book()  # ensure the order book is written to disk and next coin to buy is set
+        df = self.update_order_book()  # ensure the order book is written to disk and next coin to buy is set
+        logging.info("Summary of the investment plans:\n" + df.to_string() +"\n")
 
         # get retry times for errors
         self.retry_for_funds, self.retry_for_network = retry_info()
@@ -136,12 +137,20 @@ class Dca(object):
 
     def get_DCA_strategy(self):
         for coin in self.coin:
+            # to avoid confusion, remove any buy condition plot
+            if os.path.exists(f"trades/graph_{coin}_buy_conditions.png"):
+                os.remove(f"trades/graph_{coin}_buy_conditions.png")
             if type(self.coin[coin]['AMOUNT']) is dict:
 
-                # todo check input
+                if 'RANGE' not in self.coin[coin]['AMOUNT'] or 'PRICE_RANGE' not in self.coin[coin]['AMOUNT'] or 'MAPPING' not in self.coin[coin]['AMOUNT']:
+                    raise Exception('If AMOUNT is a dictionary the following keys are required: '
+                                    '"AMOUNT", "PRICE_RANGE", "MAPPING".')
                 self.coin[coin]['MAPPER'] = PriceMapper(self.coin[coin]['AMOUNT']['RANGE'],
                                                         self.coin[coin]['AMOUNT']['PRICE_RANGE'],
-                                                        self.coin[coin]['AMOUNT']['MAPPING'])
+                                                        self.coin[coin]['AMOUNT']['MAPPING'],
+                                                        coin,
+                                                        self.coin[coin]['PAIRING'])
+                self.coin[coin]['MAPPER'].plot()
                 self.coin[coin]['STRATEGY'] = 'Variable Amount'
                 cost = f"{self.coin[coin]['AMOUNT']['RANGE'][0]}-" \
                        f"{self.coin[coin]['AMOUNT']['RANGE'][1]}"
