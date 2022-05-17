@@ -1,17 +1,17 @@
 ![DCA-bot banner](./utils/banner.jpg)
 
-_DCA-bot_ is a python-based program for making recurring and automatic cryptocurrency purchases. 
+_DCA-bot_ is a Python-based program for making recurring and automatic cryptocurrency purchases. 
 Being developed using the [ccxt](https://github.com/ccxt/ccxt) library it can work on almost every exchange (although, it has only been tested on Binance) and on every crypto/crypto or crypto/fiat pair available on the chosen exchange. It was designed to run on 24/7 servers that are as light as a Raspberry Pi. 
 
 ### What is DCA?
 Dollar-Cost-Averaging (DCA) is a popular investing strategy in which a fixed dollar amount of a desired asset is bought at regular time intervals, regardless of market conditions.  It is particularly suitable for markets with high volatility such as cryptocurrency markets.
 While DCA might not provide the best possible returns, it has the added benefit of making you sleep well at night, even during bear market periods.
 
-### Why using this bot?
+### Why use this bot?
 Almost every exchange has the possibility of doing DCA (sometimes referred to as _recurrent buy_). So, why should you use this bot? Well, there are a few caveats you should consider when using the exchanges' recurring buy services. First, exchanges usually charge extra fees for recurrent buys. For example, the auto-invest service of Binance charges you double the regular fee. Second, the spread is sometimes higher than that of a normal market order. This means you can end up with a price that you cannot even trace back to the chart. Third, exchanges do not notify you with the outcome of the transaction or with a summary of your investment plan.    
 
 The bot was developed to overcome the above limitations. In particular, the bot
- - makes recurrent purchases through market orders. Thus, fees are limited to the commission that exchanges charge for market orders. In the case of Binance, the market fees are 0.1% and they can be further reduced by holding small amounts of their token (i.e., BNB). 
+ - makes recurrent purchases through market orders. Thus, fees are limited to the commission that exchanges charge for market orders. In the case of Binance, the market fees are 0.1%, and they can be further reduced by holding small amounts of their token (i.e., BNB). 
  - notifies you of every single transaction
  - notifies you of a summary of your investment plan. 
  - reminds you to top up your account in case the balance is not enough for the next purchase. 
@@ -96,7 +96,7 @@ If you have activated the notification system, you will receive all the relevant
 
 Even if you have disabled notifications, you can still get all the information by accessing the  `trades` folder that will be created once the bot is started. An example  of a `trades` folder is available in [trades_example](trades_example/). Inside you will find:
 
-- `log.txt` : records eveything is happing with the bot
+- `log.txt` : records everything is happening with the bot
 - `graph_COIN.png` : chart of all the purchases of a given COIN
 - `orders.json` : json file containing every filled order exactly as returned by the exchange
 - `orders.csv` : a more readable version of the above (with only the most essential information)
@@ -113,7 +113,7 @@ If a sendbox is available in the chosen exchange, the bot can operate in testing
 
 To set the bot to run in test mode, set `TEST: True` in your `config/config.yml` file. Then, you need to generate a test account on the exchange, get the API key and secret and put them in your `auth/API_keys.yml` file under `TEST` (i.e., follow the syntax as in [auth/API_keys_example.yml](auth/API_keys_example.yml)). 
 
-Getting a test account in Binance is straightforward. Just log in with a github account in [the binance testnet](https://testnet.binance.vision/) and then click on generate API keys.
+Getting a test account in Binance is straightforward. Just log in [the binance testnet](https://testnet.binance.vision/) with a GitHub account and then click on generate API keys.
 
 ## Contributing
 Any contribution to the bot is welcomed. If you have a suggestion or find a bug, please create an [issue](https://github.com/CodingCryptoTrading/dca-crypto-bot/issues).
