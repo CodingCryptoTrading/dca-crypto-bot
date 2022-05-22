@@ -135,7 +135,11 @@ class Dca(object):
             logging.warning("Balance checking failed.")
 
         if balance:
-            if cost > balance['free'][pairing]:
+            if balance['free'][pairing]:
+                coin_balance = balance['free'][pairing]
+            else: # the Kraken API returns total only
+                coin_balance = balance['total'][pairing]
+            if cost > coin_balance:
                 logging.warning(f"Insufficient funds for the next {self.coin_to_buy} purchase. Top up your account!")
                 if self.cfg['SEND_NOTIFICATIONS']:
                     next_purchase = self.next_order[1].strftime('%d %b %Y at %H:%M')
@@ -143,7 +147,7 @@ class Dca(object):
                                               next_purchase,
                                               pairing,
                                               cost,
-                                              balance['free'][pairing])
+                                              coin_balance)
 
     def wait(self):
         """
