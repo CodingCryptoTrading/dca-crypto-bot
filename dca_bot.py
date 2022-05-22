@@ -77,7 +77,7 @@ class Dca(object):
         self.order_book_path = Path('trades/next_purchases.csv')
 
         # check if the amount is fixed or is variable depending on the price range
-        self.get_DCA_strategy()
+        self.get_dca_strategy()
 
         # Get the 'SCHEDULE' time for each coin and initialize order_book
         self.initialize_order_book()
@@ -135,7 +135,7 @@ class Dca(object):
         df.to_csv(self.order_book_path)
         return df
 
-    def get_DCA_strategy(self):
+    def get_dca_strategy(self):
         for coin in self.coin:
             # to avoid confusion, remove any buy condition plot
             if os.path.exists(f"trades/graph_{coin}_buy_conditions.png"):
@@ -175,23 +175,23 @@ class Dca(object):
                 self.coin[coin]['STRATEGY'] = 'Classic'
                 self.coin[coin]['STRATEGY_STRING'] = f"Classic"
 
-    def find_next_order(self):
-
-        # first element is the coin, second element the time
-        self.next_order = min(self.order_book.items(), key=lambda x: x[1])
-        self.coin_to_buy = self.next_order[0]
-
-        # Also, write to disk the order_book
-        ordered_order_book = dict(sorted(self.order_book.items(), key=lambda item: item[1]))
-        df = pd.DataFrame([ordered_order_book]).T.rename_axis('Coin').rename(columns={0: 'Purchase Time'})
-        cycle = []
-        strategy = []
-        for coin in df.index:
-            cycle.append(self.coin[coin]['CYCLE'].lower())
-            strategy.append(self.coin[coin]['STRATEGY_STRING'])
-        df['Cycle'] = cycle
-        df['Strategy'] = strategy
-        df.to_csv(self.order_book_path)
+    # def find_next_order(self):
+    #
+    #     # first element is the coin, second element the time
+    #     self.next_order = min(self.order_book.items(), key=lambda x: x[1])
+    #     self.coin_to_buy = self.next_order[0]
+    #
+    #     # Also, write to disk the order_book
+    #     ordered_order_book = dict(sorted(self.order_book.items(), key=lambda item: item[1]))
+    #     df = pd.DataFrame([ordered_order_book]).T.rename_axis('Coin').rename(columns={0: 'Purchase Time'})
+    #     cycle = []
+    #     strategy = []
+    #     for coin in df.index:
+    #         cycle.append(self.coin[coin]['CYCLE'].lower())
+    #         strategy.append(self.coin[coin]['STRATEGY_STRING'])
+    #     df['Cycle'] = cycle
+    #     df['Strategy'] = strategy
+    #     df.to_csv(self.order_book_path)
 
     def check_funds(self):
         """
