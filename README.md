@@ -3,6 +3,12 @@
 _DCA-bot_ is a Python-based program for making recurring and automatic cryptocurrency purchases. 
 Being developed using the [ccxt](https://github.com/ccxt/ccxt) library it can work on almost every exchange (although, it has only been tested on Binance) and on every crypto/crypto or crypto/fiat pair available on the chosen exchange. It was designed to run on 24/7 servers that are as light as a Raspberry Pi. 
 
+The bot can operate in three DCA modalities:
+ - **Classic**: buy a fixed dollar amount regardless of price conditions
+ - **BuyBelow**: buy only if the price is below a price level
+ - **VariableAmount**: map a price range onto an amount range, so that when the price goes down the amount of dollars invested increases
+
+
 ### What is DCA?
 Dollar-Cost-Averaging (DCA) is a popular investing strategy in which a fixed dollar amount of a desired asset is bought at regular time intervals, regardless of market conditions.  It is particularly suitable for markets with high volatility such as cryptocurrency markets.
 While DCA might not provide the best possible returns, it has the added benefit of making you sleep well at night, even during bear market periods.
@@ -15,6 +21,10 @@ The bot was developed to overcome the above limitations. In particular, the bot
  - notifies you of every single transaction
  - notifies you of a summary of your investment plan. 
  - reminds you to top up your account in case the balance is not enough for the next purchase. 
+
+In addition, the bot introduces two non-standard DCA variants that are not usually available on recurring buy services:
+ - *BuyBelow*: buy only if the price is below a price level
+ - *VariableAmount*: map a price range onto an amount range, so that when the price goes down the amount of dollars invested increases
 
 ## Getting started
 
@@ -75,6 +85,42 @@ SMTP_SERVER: 'smtp.mail.yahoo.com' # sender email SMTP server
 EMAIL_ADDRESS_TO: 'recipient@email.com'
 ```
 The recipient address and the sender address can be the same. However, it is not wise to store the password of your main email on a server. Therefore, we suggest that you create an ad hoc email for this purpose. Gmail has too many restrictions, so it's not recommended. Yahoo mail is a good alternative (yahoo will ask you to define an "application" password, so you will not really enter the email password).
+
+### Configure the bot (DCA variants)
+The above configuration file describes the classic DCA approach. Here we describe two additional variants: BuyBelow and VariableAmount.
+
+#### BuyBelow
+BuyBelow is just like the classic DCA, but it doesn't buy when the price is above a given threshold. To use this modality, simply add the variable `BUYBELOW` in the config file as shown here:
+```
+COINS:     # Choose the coins to buy:
+    BTC:
+        PAIRING: USDT         # Choose the currency to use to buy the coin
+        AMOUNT: 25            # Quantity to buy in your pairing currency
+        CYCLE: 'daily'        # Recurring Cycle can be: 'daily', 'weekly', 'bi-weekly', 'monthly'
+        AT_TIME: '19:30'      # Format: 0 <= hour <= 23, 0 <= minute <= 59
+        BUYBELOW: 40000       # Don't buy above this price.
+```
+In the example, the bot will not buy BTC if the price is above 40000 USDT.
+
+#### VariableAmount
+In VariableAmount a price range is mapped onto an amount range, with an exponential or linear function. Prices outside the range will either result in no purchase (above the upper price range) or saturate the dollar amount (below the lower price range). To clarify this modality, take a look at the below chart that illustrates how many USDT are invested depending on the BTC price. In the example, the price range [10000-40000] USDT is mapped exponentially onto the amount range [10-100] USDT. When the price is above 40000 USDT, the bot doesn't buy (as in *BuyBelow* modality). As the price decreases, the bot uses an increasing amount of USDT, until the price reaches the lower price range and the amount of USDT saturates.
+
+![DCA-bot banner](./utils/graph_BTC_buy_conditions.png)
+
+To use the VariableAmount modality the `AMOUNT` in the config file has to be modified as follows:
+
+```
+COINS:     # Choose the coins to buy:
+    BTC:
+        PAIRING: USDT                   # Choose the currency to use to buy the coin
+        AMOUNT:                         # Now AMOUNT is a dictionary
+            RANGE: [10.1,100]           # Range of quantity to buy in your pairing currency
+            PRICE_RANGE: [10000,40000]  # Range of prices
+            MAPPING: 'exponential'      # Mapping function: 'exponential' or 'linear'
+        CYCLE: 'daily'                  # Recurring Cycle can be: 'daily', 'weekly', 'bi-weekly', 'monthly'
+        AT_TIME: '19:30'                # Format: 0 <= hour <= 23, 0 <= minute <= 59
+```
+Once the bot starts, a buy-conditions chart, similar to the above, will be saved in the trades folder. We suggest playing a bit with `RANGE`/`PRICE_RANGE`/`MAPPING` and inspecting the chart until you get a buy-condition curve that satisfies your needs.
 
 ### Run the bot
 Now that everything has been set up, we are ready to run the bot. Just navigate to the folder where you stored the bot and run:
