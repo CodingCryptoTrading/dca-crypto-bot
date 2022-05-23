@@ -156,7 +156,7 @@ class Dca(object):
                        f"{self.coin[coin]['AMOUNT']['RANGE'][1]}"
                 price_range = f"{self.coin[coin]['AMOUNT']['PRICE_RANGE'][0]}-" \
                        f"{self.coin[coin]['AMOUNT']['PRICE_RANGE'][1]}"
-                self.coin[coin]['STRATEGY_STRING'] = f"VariableAmount ({cost} {self.coin[coin]['PAIRING']}, {price_range} {coin}, {self.coin[coin]['AMOUNT']['MAPPING']})"
+                self.coin[coin]['STRATEGY_STRING'] = f"{cost} {self.coin[coin]['PAIRING']} to {price_range} {coin} {self.coin[coin]['AMOUNT']['MAPPING'][0:3]}."
                 if 'BUYBELOW' in self.coin[coin] and self.coin[coin]['BUYBELOW'] is not None:
                     logging.warning('Option "BUYBELOW" is not compatible with a range of AMOUNT values. '
                                     'Disabling it')
@@ -170,7 +170,7 @@ class Dca(object):
                                                         self.coin[coin]['PAIRING'])
                 self.coin[coin]['MAPPER'].plot()
                 self.coin[coin]['STRATEGY'] = 'BuyBelow'
-                self.coin[coin]['STRATEGY_STRING'] = f"Buy Below {self.coin[coin]['BUYBELOW']} {coin}"
+                self.coin[coin]['STRATEGY_STRING'] = f"BuyBelow {self.coin[coin]['BUYBELOW']} {self.coin[coin]['PAIRING']}"
             else:
                 self.coin[coin]['STRATEGY'] = 'Classic'
                 self.coin[coin]['STRATEGY_STRING'] = f"Classic"
@@ -225,7 +225,7 @@ class Dca(object):
         time_remaining = (self.next_order[1] - datetime.datetime.today()).total_seconds()
         if time_remaining < 0:
             time_remaining = 0
-        if self.coin[self.next_order[0]]['STRATEGY'] == 'Variable Amount':
+        if self.coin[self.next_order[0]]['STRATEGY'] == 'VariableAmount':
             cost = f"{self.coin[self.next_order[0]]['AMOUNT']['RANGE'][0]}-" \
                    f"{self.coin[self.next_order[0]]['AMOUNT']['RANGE'][1]}"
         else:
@@ -258,7 +258,7 @@ class Dca(object):
                                     datetime.datetime.now().strftime('%d %b %Y at %H:%M'),
                                     self.coin[self.coin_to_buy]['PAIRING'],
                                     self.df_stats.loc[self.coin_to_buy],
-                                    self.coin[self.coin_to_buy]['STRATEGY_STRING'])
+                                    f"Mode: {self.coin[self.coin_to_buy]['STRATEGY_STRING']}")
 
     def execute_order(self, coin):
         type_order = 'market'
