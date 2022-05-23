@@ -65,7 +65,7 @@ def get_quantity_to_buy(exchange, amount, symbol):
     return amount
 
 
-def order_to_dataframe(order, coin):
+def order_to_dataframe(exchange, order, coin):
 
     data = {'datetime (local)': datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
             'datetime (exchange)': order['datetime'],
@@ -81,7 +81,21 @@ def order_to_dataframe(order, coin):
             'fee currency': 'N.A.',
             'fee rate': 'N.A.',
             }
-    if order['fee']:  # some exchanges return None
+
+    if not order['fee']:
+        # some exchanges return None. Let's try to retrieve fees from the trade history
+        try:
+            if exchange.has['fetchOrderTrades']:
+                trades = exchange.fetch_order_trades(order['id'], order['symbol'], since=None, limit=None, params={})
+                fees = [trade['fee'] for trade in trades]
+                # In case the order is split into multiple trades:
+                fees = exchange.reduce_fees_by_currency(fees)
+                order['fee'] = fees[0]  # We assume fees are paid in the same currency (may not always be true, e.g.,
+                # a portion paid in BNB and a portion in USDT. We are discarding this case)
+        except Exception as e:
+            logging.warning(f"Couldn't retrieve fees due to: {type(e).__name__} {str(e)}")
+
+    if order['fee']:
         if 'currency' in order['fee']:
             data['fee currency'] = order['fee']['currency']
         if 'cost' in order['fee']:

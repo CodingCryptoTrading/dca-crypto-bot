@@ -55,7 +55,7 @@ class Notifier(object):
             if 'N.A.' in df['fee rate'].tolist():
                 fee_rate = ''
             else:
-                fee_rate = "(" + round_price(df['fee rate'][0]) + " %)"
+                fee_rate = "(" + round_price(df['fee rate'][0]*100) + " %)"
 
         with open('utils/mail_template/success.html', 'r', encoding='utf-8') as file:
             body = file.read()

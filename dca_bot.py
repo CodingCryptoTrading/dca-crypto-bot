@@ -151,12 +151,12 @@ class Dca(object):
                                                         coin,
                                                         self.coin[coin]['PAIRING'])
                 self.coin[coin]['MAPPER'].plot()
-                self.coin[coin]['STRATEGY'] = 'Variable Amount'
+                self.coin[coin]['STRATEGY'] = 'VariableAmount'
                 cost = f"{self.coin[coin]['AMOUNT']['RANGE'][0]}-" \
                        f"{self.coin[coin]['AMOUNT']['RANGE'][1]}"
                 price_range = f"{self.coin[coin]['AMOUNT']['PRICE_RANGE'][0]}-" \
                        f"{self.coin[coin]['AMOUNT']['PRICE_RANGE'][1]}"
-                self.coin[coin]['STRATEGY_STRING'] = f"Variable Amount ({cost} {self.coin[coin]['PAIRING']}, {price_range} {coin}, {self.coin[coin]['AMOUNT']['MAPPING']})"
+                self.coin[coin]['STRATEGY_STRING'] = f"VariableAmount ({cost} {self.coin[coin]['PAIRING']}, {price_range} {coin}, {self.coin[coin]['AMOUNT']['MAPPING']})"
                 if 'BUYBELOW' in self.coin[coin] and self.coin[coin]['BUYBELOW'] is not None:
                     logging.warning('Option "BUYBELOW" is not compatible with a range of AMOUNT values. '
                                     'Disabling it')
@@ -169,7 +169,7 @@ class Dca(object):
                                                         coin,
                                                         self.coin[coin]['PAIRING'])
                 self.coin[coin]['MAPPER'].plot()
-                self.coin[coin]['STRATEGY'] = 'Buy Below'
+                self.coin[coin]['STRATEGY'] = 'BuyBelow'
                 self.coin[coin]['STRATEGY_STRING'] = f"Buy Below {self.coin[coin]['BUYBELOW']} {coin}"
             else:
                 self.coin[coin]['STRATEGY'] = 'Classic'
@@ -242,7 +242,7 @@ class Dca(object):
         # print and save order info:
         if order:
             store_json_order(self.json_path, order)
-            df = order_to_dataframe(order, self.coin_to_buy)
+            df = order_to_dataframe(self.exchange, order, self.coin_to_buy)
             string_order = f"Bought {df['filled'][0]} {self.coin_to_buy} at price {df['price'][0]} {self.coin[self.coin_to_buy]['PAIRING']} (Cost = {df['cost'][0]} {self.coin[self.coin_to_buy]['PAIRING']})"
             logging.info("-> " + string_order)
             self.df_orders = pd.concat([self.df_orders, df]).reset_index(drop=True)
@@ -267,7 +267,7 @@ class Dca(object):
         price = None
 
         try:
-            if self.coin[coin]['STRATEGY'] == 'Buy Below' or self.coin[coin]['STRATEGY'] == 'Variable Amount':
+            if self.coin[coin]['STRATEGY'] == 'BuyBelow' or self.coin[coin]['STRATEGY'] == 'VariableAmount':
                 # check if the condition is met
                 price = get_price(self.exchange, self.coin[coin]['SYMBOL'])
                 amount = self.coin[coin]['MAPPER'].get_amount(price)
