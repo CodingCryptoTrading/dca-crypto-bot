@@ -81,12 +81,13 @@ def order_to_dataframe(order, coin):
             'fee currency': 'N.A.',
             'fee rate': 'N.A.',
             }
-    if 'currency' in order['fee']:
-        data['fee currency'] = order['fee']['currency']
-    if 'cost' in order['fee']:
-        data['fee'] = order['fee']['cost']
-    if 'rate' in order['fee']:
-        data['fee rate'] = order['fee']['rate']
+    if order['fee']:  # some exchanges return None
+        if 'currency' in order['fee']:
+            data['fee currency'] = order['fee']['currency']
+        if 'cost' in order['fee']:
+            data['fee'] = order['fee']['cost']
+        if 'rate' in order['fee']:
+            data['fee rate'] = order['fee']['rate']
 
     df = pd.DataFrame(data, index=[0])
     return df

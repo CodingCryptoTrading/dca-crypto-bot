@@ -289,6 +289,8 @@ class Dca(object):
                 # In case the above is not available on the exchange use the following
                 amount = get_quantity_to_buy(self.exchange, amount, symbol)
                 order = self.exchange.create_order(symbol, type_order, side, amount, price)
+                # for some exchanges (as FTX) the order must be retrieved to be updated
+                order = self.exchange.fetch_order(order['id'], symbol)
             self.handle_successful_trade(coin)
             return order
         # Network errors: these are non-critical errors (recoverable)
