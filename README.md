@@ -1,7 +1,7 @@
 ![DCA-bot banner](./utils/banner.jpg)
 
 _DCA-bot_ is a Python-based program for making recurring and automatic cryptocurrency purchases. 
-Being developed using the [ccxt](https://github.com/ccxt/ccxt) library it can work on almost every exchange (although, it has only been tested on Binance) and on every crypto/crypto or crypto/fiat pair available on the chosen exchange. It was designed to run on 24/7 servers that are as light as a Raspberry Pi. 
+Being developed using the [ccxt](https://github.com/ccxt/ccxt) library it can work on almost every exchange (although, it has only been tested on Binance and FTX) and on every crypto/crypto or crypto/fiat pair available on the chosen exchange. It was designed to run on 24/7 servers that are as light as a Raspberry Pi. 
 
 The bot can operate in three DCA modalities:
  - **Classic**: buy a fixed dollar amount regardless of price conditions
@@ -17,14 +17,14 @@ While DCA might not provide the best possible returns, it has the added benefit 
 Almost every exchange has the possibility of doing DCA (sometimes referred to as _recurrent buy_). So, why should you use this bot? Well, there are a few caveats you should consider when using the exchanges' recurring buy services. First, exchanges usually charge extra fees for recurrent buys. For example, the auto-invest service of Binance charges you double the regular fee. Second, the spread is sometimes higher than that of a normal market order. This means you can end up with a price that you cannot even trace back to the chart. Third, exchanges do not notify you with the outcome of the transaction or with a summary of your investment plan.    
 
 The bot was developed to overcome the above limitations. In particular, the bot
- - makes recurrent purchases through market orders. Thus, fees are limited to the commission that exchanges charge for market orders. In the case of Binance, the market fees are 0.1%, and they can be further reduced by holding small amounts of their token (i.e., BNB). 
+ - makes recurrent purchases through market orders. Thus, fees are limited to the commission that exchanges charge for market orders. In the case of Binance, the market fees are 0.1%, and they can be further reduced by holding small amounts of their token (i.e., BNB) 
  - notifies you of every single transaction
- - notifies you of a summary of your investment plan. 
+ - notifies you of a summary of your investment plan 
  - reminds you to top up your account in case the balance is not enough for the next purchase. 
 
 In addition, the bot introduces two non-standard DCA variants that are not usually available on recurring buy services:
  - *BuyBelow*: buy only if the price is below a price level
- - *VariableAmount*: map a price range onto an amount range, so that when the price goes down the amount of dollars invested increases
+ - *VariableAmount*: map a price range onto an amount range, so that when the price goes down the amount of dollars invested increases.
 
 ## Getting started
 
@@ -144,6 +144,7 @@ Even if you have disabled notifications, you can still get all the information b
 
 - `log.txt` : records everything is happening with the bot
 - `graph_COIN.png` : chart of all the purchases of a given COIN
+- `graph_COIN_buy_conditions.png` : buy-condition chart (only in *VariableAmount* mode)
 - `orders.json` : json file containing every filled order exactly as returned by the exchange
 - `orders.csv` : a more readable version of the above (with only the most essential information)
 - `stats.csv` : summary statistics of your investment plans
