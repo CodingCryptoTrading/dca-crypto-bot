@@ -40,7 +40,8 @@ class Notifier(object):
                 next_purchase,
                 bought_on,
                 pairing,
-                stats):
+                stats,
+                extra):
 
         coin = df['coin'][0]
 
@@ -54,7 +55,7 @@ class Notifier(object):
             if 'N.A.' in df['fee rate'].tolist():
                 fee_rate = ''
             else:
-                fee_rate = "(" + round_price(df['fee rate'][0]) + " %)"
+                fee_rate = "(" + round_price(df['fee rate'][0]*100) + " %)"
 
         with open('utils/mail_template/success.html', 'r', encoding='utf-8') as file:
             body = file.read()
@@ -77,7 +78,8 @@ class Notifier(object):
                                N=int(stats['N']),
                                total_cost=round_price(stats['TotalCost']),
                                gain=round_price(stats['ROI']),
-                               ROI=round_price(stats['ROI%']))
+                               ROI=round_price(stats['ROI%']),
+                               extra=extra)
 
         # Attach graph
         graph_path = 'trades/graph_' + coin + '.png'
