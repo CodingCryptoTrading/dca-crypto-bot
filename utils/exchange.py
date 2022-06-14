@@ -48,7 +48,8 @@ def get_non_zero_balance(exchange, sort_by='total', ascending=False ):
     df = pd.DataFrame.from_records(coin_list)
     df.index = coin_name
     # sort df
-    df.sort_values(sort_by, axis=0, ascending=ascending, inplace=True)
+    if df.shape[0] > 0:
+        df.sort_values(sort_by, axis=0, ascending=ascending, inplace=True)
     return df
 
 

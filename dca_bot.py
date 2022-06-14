@@ -42,7 +42,11 @@ class Dca(object):
         # Show balance
         try:
             balance = get_non_zero_balance(self.exchange, sort_by='total')
-            logging.info("Your balance from the exchange:\n" + balance.to_string() + "\n")
+            if balance.shape[0] == 0:
+                balance_str = 'No coin found in your wallet!'  # is it worth going on?
+            else:
+                balance_str = balance.to_string()
+            logging.info("Your balance from the exchange:\n" + balance_str + "\n")
         except Exception as e:
             logging.warning("Balance checking failed: " + type(e).__name__ + " " + str(e))
 
@@ -208,10 +212,12 @@ class Dca(object):
             logging.warning("Balance checking failed.")
 
         if balance:
-            if balance['free'][pairing]:
-                coin_balance = balance['free'][pairing]
-            else: # the Kraken API returns total only
-                coin_balance = balance['total'][pairing]
+            # the Kraken API returns total only
+            balance_type = 'total' if self.exchange.id == 'kraken' else 'free'
+            if pairing in balance[balance_type]:
+                coin_balance = balance[balance_type][pairing]
+            else:
+                coin_balance = 0
             if cost > coin_balance:
                 logging.warning(f"Insufficient funds for the next {self.coin_to_buy} purchase. Top up your account!")
                 if self.cfg['SEND_NOTIFICATIONS']:
