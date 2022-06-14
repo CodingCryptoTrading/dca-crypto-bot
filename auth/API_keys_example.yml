@@ -18,4 +18,10 @@ COINBASEPRO:
     SECRET: 'place here your secret'
     PASSPHRASE: 'place here your passphrase (sometimes called password)'
 
+KUCOIN:
+  REAL:
+    APIKEY: 'place here your API key'
+    SECRET: 'place here your secret'
+    PASSPHRASE: 'place here your passphrase (sometimes called password)'
+
 
