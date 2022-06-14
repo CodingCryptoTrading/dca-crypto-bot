@@ -114,7 +114,7 @@ def connect_to_exchange(cfg, api):
     api_test_selector = 'TEST' if cfg['TEST'] else 'REAL'
 
     exchange_id = cfg['EXCHANGE'].upper()
-    if 'PASSPHRASE' in api[exchange_id]:
+    if 'PASSPHRASE' in api[exchange_id][api_test_selector]:
         exchange_class = getattr(ccxt, exchange_id.lower())
         exchange = exchange_class({
             'apiKey': api[exchange_id][api_test_selector]['APIKEY'],
