@@ -300,7 +300,13 @@ class Dca(object):
                 amount = get_quantity_to_buy(self.exchange, amount, symbol)
                 order = self.exchange.create_order(symbol, type_order, side, amount, price)
                 # for some exchanges (as FTX) the order must be retrieved to be updated
-                order = self.exchange.fetch_order(order['id'], symbol)
+                waiting_time = 0.25; total_time = 0
+                while order['status'] == 'open':
+                    if total_time > 1:
+                        raise Exception("The exchange did not return a closed order")
+                    time.sleep(waiting_time)  # let's give the exchange some time to fill the order
+                    order = self.exchange.fetch_order(order['id'], symbol)
+                    total_time += waiting_time
             self.handle_successful_trade(coin)
             return order
         # Network errors: these are non-critical errors (recoverable)
