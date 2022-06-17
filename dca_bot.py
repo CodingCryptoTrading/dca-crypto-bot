@@ -301,7 +301,7 @@ class Dca(object):
                 order = self.exchange.create_order(symbol, type_order, side, amount, price)
                 # for some exchanges (as FTX) the order must be retrieved to be updated
                 waiting_time = 0.25; total_time = 0
-                while order['status'] == 'open':
+                while order['status'] != 'closed':
                     if total_time > 1:
                         raise Exception("The exchange did not return a closed order")
                     time.sleep(waiting_time)  # let's give the exchange some time to fill the order
