@@ -1,7 +1,7 @@
 ![DCA-bot banner](./utils/banner.jpg)
 
 _DCA-bot_ is a Python-based program for making recurring and automatic cryptocurrency purchases. 
-Being developed using the [ccxt](https://github.com/ccxt/ccxt) library it can work on almost every exchange (although, it has only been tested on Binance, FTX and Kucoin) and on every crypto/crypto or crypto/fiat pair available on the chosen exchange. It was designed to run on 24/7 servers that are as light as a Raspberry Pi. 
+Being developed using the [ccxt](https://github.com/ccxt/ccxt) library it can work on almost every exchange (although, it has only been tested on Binance, and FTX) and on every crypto/crypto or crypto/fiat pair available on the chosen exchange. It was designed to run on 24/7 servers that are as light as a Raspberry Pi. 
 
 The bot can operate in three DCA modalities:
  - **Classic**: buy a fixed dollar amount regardless of price conditions
